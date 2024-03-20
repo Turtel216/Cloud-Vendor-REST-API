@@ -19,3 +19,6 @@ The passing of information uses the JSON text format. Here is an example of the 
           "vendorAddress": "Address 1",
           "vendorPhoneNumber": "1"
     }
+
+## NOTE
+To configure the databass look up the application.yaml file in the resources folder
