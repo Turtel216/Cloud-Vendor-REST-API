@@ -1,13 +1,15 @@
 package com.dimitrios_papakonstantinou.restdemo.controller;
 
 import com.dimitrios_papakonstantinou.restdemo.model.CloudVendor;
+import com.dimitrios_papakonstantinou.restdemo.response.ResponseHandler;
 import com.dimitrios_papakonstantinou.restdemo.service.CloudVendorService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//In terms of the Spring Boot Project Architecture(for REST APIs) this Would be the Controller Layer
-//this handler supports json by default
+
 //ThisClass handles routes and requests for /cloudvendor
 @RestController
 @RequestMapping("/cloudvendor")
@@ -22,12 +24,11 @@ public class CloudVendorController {
 
 
     //GET API
-    //vendor id is the parameter added at the end of an url ex. api/:id. the param is called query I think
     // Read Specific Cloud Vendor Details
     @GetMapping("{vendorId}")
-    public CloudVendor getCloudVendorDetails(@PathVariable("vendorId") String vendorId) {
+    public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorId") String vendorId) {
 
-        return cloudVendorService.getCloudVendor(vendorId);
+        return ResponseHandler.responseBuilder("Requested Vendor Details are given here", HttpStatus.OK, cloudVendorService.getCloudVendor(vendorId));
     }
 
     //Read all Cloud Vendors Detail

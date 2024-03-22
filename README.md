@@ -14,10 +14,14 @@ The API provides services which include:
 The passing of information uses the JSON text format. Here is an example of the JSON file layout which is used:
 
       {
-          "vendorID": "C1",
-          "vendorName": "Vendor 1",
-          "vendorAddress": "Address 1",
-          "vendorPhoneNumber": "1"
+        "data": {
+            "vendorId": "C3",
+            "vendorName": "Vendor 1",
+            "vendorAddress": "Address 1",
+            "vendorPhoneNumber": "1"
+        },
+        "httpStatus": "OK",
+        "message": "Requested Vendor Details are given here"
     }
 
 ## NOTE
