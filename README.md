@@ -22,7 +22,7 @@ The passing of information uses the JSON text format. Here is an example of the 
         },
         "httpStatus": "OK",
         "message": "Requested Vendor Details are given here"
-    }
+      }
 
 ## NOTE
 To configure the databass look up the application.yaml file in the resources folder
